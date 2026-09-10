@@ -4,7 +4,7 @@
 `cloud-itonami/rare-earth-coverage`（superproject `com-junkawasaki/root` の west project）。
 
 **在るのは 3 つ**: 62 の actor と 66 の flow を Cypher で書いた `actor-manifest.jsonld`、
-それを 12 セル × 7 ゲートで包む `src/rare_earth_coverage/murakumo.cljc`、走らない
+それを 12 セル × 7 ゲートで包む `src/rare_earth_coverage/murakumo.kotoba`、走らない
 `actor-manifest.test.ts`。**無いのは、それを実行する者**。
 
 この README の数値はすべて 2026-08-09 に実測した。**手順は
@@ -104,7 +104,7 @@ pipeline は jsonld 側に付いている。**
 
 ## gate は本当に閉まる。ただし payload はその外を通る
 
-`src/rare_earth_coverage/murakumo.cljc`（198 行、依存は `clojure.string` のみ）。
+`src/rare_earth_coverage/murakumo.kotoba`（198 行、依存は `clojure.string` のみ）。
 実測（`nbb --classpath src`）:
 
 ```
@@ -171,7 +171,7 @@ supersede 済みの残骸ではない。`:actor/supersedes` というキーを�
 
 west の pin は `b812981`（2026-07-02）で、remote main `a0cdfe9` より **2 commit 遅れている**
 （`ahead_by: 2 / behind_by: 0` の純 fast-forward）。差分は
-`src/rare_earth_coverage/murakumo.cljc` の 198 行**だけ** —— つまり pin だけを見ると、
+`src/rare_earth_coverage/murakumo.kotoba` の 198 行**だけ** —— つまり pin だけを見ると、
 **この repo で唯一走るものが存在しないように見える。**
 
 成熟度計測（ADR-2608052000）はローカル checkout を読むので、pin を進めない限り

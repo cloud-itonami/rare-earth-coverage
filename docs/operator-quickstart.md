@@ -47,7 +47,7 @@ gh api repos/cloud-itonami/rare-earth-coverage/compare/b812981f9ffd08526c879328c
 ```
 
 ```
-added +198 src/rare_earth_coverage/murakumo.cljc
+added +198 src/rare_earth_coverage/murakumo.kotoba
 ```
 
 **pin だけを見ると、この repo は「実行できるものが 1 行も無い descriptor」に見える。**
