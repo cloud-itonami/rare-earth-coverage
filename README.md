@@ -105,7 +105,7 @@ pipeline は jsonld 側に付いている。**
 ## gate は本当に閉まる。ただし payload はその外を通る
 
 `src/rare_earth_coverage/murakumo.kotoba`（198 行、依存は `clojure.string` のみ）。
-実測（`nbb --classpath src`）:
+実測（`kbb --backend sci --classpath src`）:
 
 ```
 7 ゲート中 6 つを与える  → 12 セル全部 :blocked / effects 0
