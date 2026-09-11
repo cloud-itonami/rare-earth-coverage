@@ -226,7 +226,7 @@ cd "$REPO" && cat > /tmp/gate-check.cljs <<'EOF'
 (println "effect ops ="
   (distinct (map :op (mapcat :effects (vals (m/all-cell-plans {:attestations all :computed-at "t" :request-id "r"}))))))
 EOF
-nbb --classpath src /tmp/gate-check.cljs
+kbb --backend sci --classpath src /tmp/gate-check.cljs
 ```
 
 実測:
@@ -259,7 +259,7 @@ cd "$REPO" && cat > /tmp/map-cells.cljs <<'EOF'
   (vec (mapcat (fn [p] (when (= "cron" (get-in p ["trigger" "type"])) (map #(get % "id") (get p "steps"))))
                (get mf "pipelines"))))
 EOF
-nbb --classpath src /tmp/map-cells.cljs
+kbb --backend sci --classpath src /tmp/map-cells.cljs
 ```
 
 ```
@@ -462,7 +462,7 @@ cd "$REPO" && cat > /tmp/check12.cljs <<'EOF'
 (chk "isBot true" (= true (get-in m ["profile" "isBot"])) (get-in m ["profile" "isBot"]))
 (println (str "\n" @n-pass " passed, " @n-fail " failed"))
 EOF
-nbb /tmp/check12.cljs
+kbb --backend sci /tmp/check12.cljk
 ```
 
 ```
@@ -502,7 +502,7 @@ cd "$REPO" && cat > /tmp/gate-falsify.cljs <<'EOF'
 (println "未知の cell → "
   (try (m/cell-plan :no-such-cell {:attestations all}) (catch :default e (ex-message e))))
 EOF
-nbb --classpath src /tmp/gate-falsify.cljs
+kbb --backend sci --classpath src /tmp/gate-falsify.cljs
 ```
 
 ```
@@ -521,7 +521,7 @@ nbb --classpath src /tmp/gate-falsify.cljs
 順番に意味がある:
 
 1. **west の pin を main まで進める**（手順 0）。進めないと、以降の全部が「無い」ものとして
-   計測される。`nbb scripts/gen-west-manifest.cljs --entry rare-earth-coverage`。
+   計測される。`kbb --backend sci scripts/gen-west-manifest.cljk --entry rare-earth-coverage`。
 2. **DID をどちらかに決める**（手順 5）。決めると `it("DID valid")` が落ちるので、
    同時に `package.json` を入れて落ちることを見る（手順 8）。
 3. **Cypher の宛先を決める**。受ける graph store を用意するか、ADR-2605262130 を引く
