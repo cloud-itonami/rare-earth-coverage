@@ -22,7 +22,7 @@
 
 ## 「coverage」を計算しているのは COUNT 3 本と LLM プロンプト 1 個
 
-`CLAUDE.md` と manifest の `riskAssessmentAxis` は、この actor の解析中核を
+`AGENTS.md` と manifest の `riskAssessmentAxis` は、この actor の解析中核を
 「多世代（子・孫）× wellbecoming のリスク評価軸」と宣言し、①独占／チョークポイント
 依存と②不可逆な多世代環境リスクを測って **resilience / de-monopolization /
 restoration** へ routing すると書いている。
