@@ -1,4 +1,4 @@
-# 20-actors/rare-earth-coverage — CLAUDE.md
+# 20-actors/rare-earth-coverage — AGENTS.md
 
 ## What this is
 

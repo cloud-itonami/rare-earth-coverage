@@ -159,7 +159,7 @@ pipelines 5 steps 12
 
 ## 手順 3 — 名乗っている risk 機能が Cypher に 1 行も無いことを確かめる
 
-`CLAUDE.md` と `riskAssessmentAxis` は解析中核を「多世代（子・孫）× wellbecoming の
+`AGENTS.md` と `riskAssessmentAxis` は解析中核を「多世代（子・孫）× wellbecoming の
 リスク評価軸」と宣言している。その語彙を Cypher に対して数える:
 
 ```bash
